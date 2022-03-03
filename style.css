@@ -1,0 +1,45 @@
+root {
+    --red:#940e3f;
+    --black: #000000;
+    --orange: rgba(255, 166, 0, 0.795);
+    
+    --font: 'Roboto' sans-serif;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.topContainer{
+
+    height:15vh;
+    border: 1px solid black;
+}
+.topContainer img{
+    width:50%;
+}
+.topContainer h2{
+    padding-top: 30px;
+    margin: auto;
+    font-size: 50px;
+}
+.leftContainer{
+    background-color: var(--black);
+    border: 1px solid black;
+    height: 94vh;
+    max-height: 100%;
+    padding: 20px;
+}
+.leftContainer h1{
+    text-decoration: underline;
+}
+.leftContainer p{
+    text-align: center;
+}
+.rightContainer{
+    background-color: aliceblue;
+    border: 1px solid black;
+    
+
+}
