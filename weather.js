@@ -16,6 +16,6 @@ fetch('https://api.openweathermap.org/data/2.5/weather?lat=60.20999477922676&lon
         temp.innerHTML = `${roundedTemp}°C`;
         feels.innerHTML = `Tuntuu kuin:<b> ${roundedFeels}°C</b>`;
         desc.innerHTML = `<b> ${descValue}</b>`;
-        ikoni.innerHTML = `<img src="/icons/${iconcode}.svg" >`;
+        ikoni.innerHTML = `<img src="./icons/${iconcode}.svg" >`;
 
     });
