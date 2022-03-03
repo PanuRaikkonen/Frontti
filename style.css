@@ -17,8 +17,10 @@
     height:100%;
 }
 .topContainer img{
-    padding: 5px;
     height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    object-position: left;
 }
 .topContainer h2{
     margin: auto;
