@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.0/mapbox-gl.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
@@ -84,10 +86,16 @@
                 </li>
             </ul>
         </div>
-        <div class="middleContainer col 4">Pyörät</div>
+        <div class="middleContainer col 4">
+            <div id="map">
+
+            </div>
+        </div>
         <div class="rightContainer col 4">Ruokalista</div>
     </div>
-    <script src="app.js"></script>
+    <script src="weather.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.0/mapbox-gl.js"></script>
+    <script src="pyora.js"></script>
 </body>
 
 </html>
