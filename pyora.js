@@ -85,13 +85,12 @@ function drawMarkers() {
         // pass to the Marker constructor.
         let elem = document.createElement('div');
         elem.className = 'marker';
-        //we add a data-id attribute with a unique value to the marker so we can later grab info from the right marker
+        //we add a data-id attribute with a unique value to the marker, so we can later grab info from the right marker
         elem.setAttribute("data-id", z)
 
         // Now, we construct a marker and set it's coordinates from the GeoJSON. Note the coordinate order.
         let marker = new mapboxgl.Marker(elem);
         marker.setLngLat(point.geometry.coordinates);
-
 
         // You can also create a popup that gets shown when you click on a marker. You can style this using
         // CSS as well if you so desire. A minimal example is shown. The offset will depend on the height of your image.
@@ -104,6 +103,8 @@ function drawMarkers() {
         // Finally, we add the marker to the map.
         marker.addTo(map);
         z++;
+
+        marker.togglePopup();
 
     });
 }
