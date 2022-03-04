@@ -8,10 +8,15 @@ let map = undefined;
 
 map = new mapboxgl.Map({
     container: 'map',
-    style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json',  // Style URL; see our documentation for more options
+    style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true',  // Style URL; see our documentation for more options
     center: [24.97647089113386, 60.20995013106471],
     // Initial focus coordinate
     zoom: 14.16
+});
+
+map.on('load', () => {
+    const mapContainerEl = document.getElementById('map');
+    mapContainerEl.style.visibility = 'visible';
 });
 
 fetchStations();
