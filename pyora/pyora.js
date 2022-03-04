@@ -3,27 +3,32 @@
 
 
 let url = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
-let markerCollection = {
+const markerCollection = {
     "type": "FeatureCollection",
     "features": []
 };
+
+
 
 let map = undefined;
 
         map = new mapboxgl.Map({
             container: 'map',
-            style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json',  // Style URL; see our documentation for more options
+            style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true',  // Style URL; see our documentation for more options
             center: [24.97647089113386, 60.20995013106471],
             // Initial focus coordinate
-            zoom: 14.16
+            zoom: 14.16,
         });
+
+map.on('load', () => {
+    const mapContainerEl = document.getElementById('map');
+    mapContainerEl.style.visibility = 'visible';
+});
 
 fetchStations()
 // Mapbox GL JS has a bug in it's handling of RTL, so we have to grab this dependency as well until they
 // combine it with the main library
 mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.1/mapbox-gl-rtl-text.js');
-
-// Add zoom and rotation controls to the map.
 
 async function fetchStations(){
 //fetch information of bikes from digitransit.fi api
