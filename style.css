@@ -98,8 +98,6 @@
     cursor: pointer;
 }
 
-
-
 #static {
     background-image: url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-85.757,38.25,10/600x400?access_token=');
     width: 100%;
