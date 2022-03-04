@@ -17,7 +17,10 @@ map = new mapboxgl.Map({
     // Initial focus coordinate
     zoom: 14.16
 });
-
+map.on('load', () => {
+    const mapContainerEl = document.getElementById('map');
+    mapContainerEl.style.visibility = 'visible';
+});
 fetchStations()
 // Mapbox GL JS has a bug in it's handling of RTL, so we have to grab this dependency as well until they
 // combine it with the main library
