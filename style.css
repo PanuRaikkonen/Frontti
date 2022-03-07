@@ -99,7 +99,7 @@
 }
 
 #static {
-    background-image: url('https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true');
+    background-image: url('https://tiles.stadiamaps.com/styles/alidade_smooth.json');
     width: 100%;
     height: 100%;
     grid-column: 1;
