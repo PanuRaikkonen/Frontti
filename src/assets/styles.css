@@ -112,6 +112,7 @@ html {
     text-align: center;
     padding: 1rem;
     text-decoration: underline;
+    margin-bottom: 0 !important;
 }
 .rightContainer {
     background-color: whitesmoke;
@@ -148,4 +149,10 @@ html {
 }
 #arabDesc {
     font-size: 1.5rem;
+}
+#info li:not(:last-child) {
+    margin-bottom: 2rem;
+}
+.rightContainer h5 {
+    text-align: center;
 }
