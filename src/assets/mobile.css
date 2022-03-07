@@ -115,6 +115,7 @@ html {
     text-align: center;
     padding: 1rem;
     text-decoration: underline;
+    margin: 0;
 }
 .rightContainer h5 {
     text-align: center;
