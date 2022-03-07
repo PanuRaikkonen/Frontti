@@ -116,13 +116,27 @@ html {
     padding: 1rem;
     text-decoration: underline;
 }
+.rightContainer h5 {
+    text-align: center;
+    color: var(--gray);
+}
+#info li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+#info li {
+    max-width: 80%;
+    margin: auto;
+}
 .rightContainer {
     background-color: whitesmoke;
     width: 100%;
     position: relative;
 }
 .diets {
+    border-top: 1px dotted var(--gray);
     padding: 1rem;
+    max-width: 85%;
+    margin: auto;
 }
 #static {
     background-image: url('https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true');

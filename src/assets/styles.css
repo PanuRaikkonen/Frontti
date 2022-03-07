@@ -118,7 +118,10 @@ html {
     background-color: whitesmoke;
 }
 .diets {
+    border-top: 1px dotted var(--gray);
     padding: 1rem;
+    max-width: 85%;
+    margin: auto;
 }
 #static {
     background-image: url('https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true');
@@ -153,6 +156,11 @@ html {
 #info li:not(:last-child) {
     margin-bottom: 2rem;
 }
+#info li {
+    max-width: 80%;
+    margin: auto;
+}
 .rightContainer h5 {
     text-align: center;
+    color: var(--gray);
 }
