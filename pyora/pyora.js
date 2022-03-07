@@ -20,6 +20,8 @@ let map = undefined;
             zoom: 14.16,
         });
 
+
+
 map.on('load', () => {
     const mapContainerEl = document.getElementById('map');
     mapContainerEl.style.visibility = 'visible';
@@ -38,14 +40,13 @@ async function fetchStations(){
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            query: `
-    {
-  bikeRentalStations {
-    bikesAvailable
-    lat
-    lon
-  }
-}
+            query: `{
+        bikeRentalStations(ids:["140", "139", "138", "292", "141", "204", "144", "137", "235", "148"]) {
+        bikesAvailable
+        lat
+        lon
+      }
+    }
       `,
         }),
     })
@@ -82,7 +83,7 @@ async function fetchStations(){
 
 function drawMarkers(){
     //console.log("beginning to draw")
-    let z = 0;
+    let z = 0
     // Next, we can add markers to the map
     markerCollection.features.forEach(function(point) {
 
