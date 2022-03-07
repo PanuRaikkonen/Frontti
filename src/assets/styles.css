@@ -3,16 +3,14 @@
     --orange: #ff5000;
     --gray: #53565a;
     
-    --font: 'Roboto' sans-serif;
 }
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: var(--font);
 }
 html {
-    height: 100vh;
+    height: 84vh;
 }
 .topContainer{
 
@@ -24,13 +22,14 @@ html {
     padding: 10px;
     object-position: left;
 }
-.topContainer h2{
+.topContainer h3{
     margin: auto;
-    font-size: 50px;
+    color: var(--gray);
 }
 .leftContainer{
     border-top: 1px solid black;
-    height: 85vh;
+    border-bottom: 1px solid black;
+    height: 84vh;
     padding: 20px;
     background-color: whitesmoke;
 }
@@ -44,20 +43,21 @@ html {
 .rightContainer{
     background-color: aliceblue;
     border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 .weatherIcon {
     max-width: 10em;
     padding: 20px;
     margin-right: 2em;
-    height: 100%;
-    margin: auto;
+    object-fit: contain;
+    object-position: center;
 }
 .weather {
     max-width: 20%;
     text-align: right;
     padding: 10px;
-    height: 100%;
-
+    object-fit: contain;
+    object-position: center;
 }
 .navbar {
     height: 15vh;
@@ -77,19 +77,19 @@ html {
 .weather p {
     margin:0;
 }
-.titleContainer h2 {
-    color: var(--gray);
-}
 .middleContainer {
-    background-color: lightyellow;
+    background-color: whitesmoke;
+    height: 84vh;
     border: 1px solid;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 #map {
     width: 100%;
     height: 100%;
     visibility: hidden;
+
 }
 .marker {
     /* The following icon is owned by Stadia Maps. While you maintain an account with us, we grant you royalty-free use of
@@ -100,10 +100,28 @@ html {
     height: 30px;
     cursor: pointer;
 }
+.middleContainer h1 {
+    text-align: center;
+    padding: 1rem;
+    text-decoration: underline;
+    position: relative
+}
+.rightContainer h1 {
+    text-align: center;
+    padding: 1rem;
+    text-decoration: underline;
+}
+.rightContainer {
+    background-color: whitesmoke;
+}
+.diets {
+    padding: 1rem;
+}
 #static {
     background-image: url('https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true');
     width: 100%;
     height: 100%;
     grid-column: 1;
     grid-row: 1;
+    margin: auto;
 }
