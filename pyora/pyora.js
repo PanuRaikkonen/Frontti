@@ -18,6 +18,7 @@ let map = undefined;
             center: [24.97647089113386, 60.20995013106471],
             // Initial focus coordinate
             zoom: 14.16,
+
         });
 
 
@@ -26,6 +27,8 @@ map.on('load', () => {
     const mapContainerEl = document.getElementById('map');
     mapContainerEl.style.visibility = 'visible';
 });
+
+
 
 fetchStations()
 // Mapbox GL JS has a bug in it's handling of RTL, so we have to grab this dependency as well until they
@@ -114,6 +117,24 @@ function drawMarkers(){
         marker.togglePopup();
 
     });
-}
+
+    hereMarker()
+
+    function hereMarker() {
+            // pass to the Marker constructor.
+            let elem = document.createElement('p');
+            elem.className = 'newmarker';
+            //we add a data-id attribute with a unique value to the marker so we can later grab info from the right marker
+            // Now, we construct a marker and set it's coordinates from the GeoJSON. Note the coordinate order.
+            let newmarker = new mapboxgl.Marker(elem);
+            newmarker.setLngLat([60.20995013106471, 24.97647089113386]);
+
+            let newpopup = new mapboxgl.Popup();
+            newpopup.setHTML('you are here');
+            newmarker.setPopup(popup);
+            newmarker.addTo(map);
+            newmarker.togglePopup();
+
+        }};
 
 
