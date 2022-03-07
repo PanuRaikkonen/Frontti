@@ -15,21 +15,22 @@ html {
 
     height:100%;
 }
-.topContainer img{
+/*.topContainer img{
     height: 100%;
     width: 100%;
     object-fit: contain;
     padding: 10px;
     object-position: left;
-}
-.topContainer h3{
-    margin: auto;
+}*/
+.arabiaTitle{
     color: var(--gray);
+    max-width: 50%;
+    font-weight: bold;
 }
 .leftContainer{
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    height: 84vh;
+    width: 100%;
     padding: 20px;
     background-color: whitesmoke;
     overflow: auto;
@@ -44,7 +45,6 @@ html {
 .rightContainer{
     background-color: aliceblue;
     border-top: 1px solid black;
-    border-bottom: 1px solid black;
 }
 .weatherIcon {
     max-width: 10em;
@@ -52,9 +52,11 @@ html {
     margin-right: 2em;
     object-fit: contain;
     object-position: center;
+    visibility: hidden;
+    display: none;
 }
 .weather {
-    max-width: 20%;
+    max-width: 40%;
     text-align: right;
     padding: 10px;
     object-fit: contain;
@@ -62,18 +64,18 @@ html {
 }
 .navbar {
     height: 15vh;
-    padding: 0;
+    padding: 5px;
     margin: 0;
 }
 .titleContainer {
     height: 100%;
 }
 .ikoni img{
-    width: 100%;
-    height: 100%;
+    visibility: hidden;
+    display: none;
 }
 .temp {
-    font-size: 4em;
+    font-size: 2em;
     font-weight: bold;
 }
 .weather p {
@@ -81,10 +83,11 @@ html {
 }
 .middleContainer {
     background-color: whitesmoke;
-    height: 84vh;
-    border: 1px solid;
+    width: 100%;
+    height: 50vh;
     margin: 0;
     padding: 0;
+    position: relative;
     overflow: hidden;
 }
 #map {
@@ -106,7 +109,7 @@ html {
     text-align: center;
     padding: 1rem;
     text-decoration: underline;
-    position: relative
+    position: relative;
 }
 .rightContainer h1 {
     text-align: center;
@@ -115,6 +118,8 @@ html {
 }
 .rightContainer {
     background-color: whitesmoke;
+    width: 100%;
+    position: relative;
 }
 .diets {
     padding: 1rem;
@@ -128,24 +133,17 @@ html {
     margin: auto;
 }
 .metris {
-    background-image: url(./metropolia_s_oranssi_en.png);
+    background-image: url(./metropolia_l_oranssi_en.png);
     background-repeat: no-repeat;
     background-size: contain;
+    max-width: 50%;
+}
+.kampusDesc {
+    text-align: left;
 }
 .arabia {
     margin: auto;
-    font-size: xx-large;
-    text-align: center;
 }
 #info {
-    display: block !important;
-}
-.arabiaTitle {
-    font-weight: bold;
-}
-#arab {
-    font-size: 4rem;
-}
-#arabDesc {
-    font-size: 1.5rem;
+    display: none;
 }

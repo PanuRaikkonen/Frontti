@@ -105,8 +105,6 @@ function drawMarkers() {
         // Finally, we add the marker to the map.
         marker.addTo(map);
         z++;
-
-        marker.togglePopup();
     });
 }
 
