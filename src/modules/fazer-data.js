@@ -13,18 +13,24 @@ const dataUrlEn = `https://www.foodandco.fi/api/restaurant/menu/week?language=en
 const parseFazerMenuDay = (Menus, dayOfWeek) => {
   const dayMenu = Menus[dayOfWeek].SetMenus.map((setMenu) => {
     const name = setMenu.Name;
-    const price = setMenu.Price;
-    let meals = [];
+    let price = setMenu.Price;
+    const diet = setMenu.Diets;
+    let meals = "";
 
-    console.log(setMenu.Meals);
+    // console.log(setMenu.Meals);
 
     for (const meal of setMenu.Meals) {
-      meals.push = meal.Name + ": (" + meal.Diets + ") ";
+      meals += meal.Name + " (" + meal.Diets + ") <br>";
     }
-    for (let i = 0; i < Menus[dayOfWeek].SetMenus.length; i++) {
-      //  console.log(Menus[dayOfWeek].SetMenus[i].Meals);
+    // for (let i = 0; i < Menus[dayOfWeek].SetMenus.length; i++) {
+    //  console.log(Menus[dayOfWeek].SetMenus[i].Meals);
+    // }
+    if (price === null) {
+      price = "";
     }
-    //return meal.Name + ": " + meal.Diets + ": " + price;
+    return name
+      ? "<b>" + name + ": " + price + "</b>: <br>" + meals
+      : meals + diet + ": ";
   });
   return dayMenu;
 };
