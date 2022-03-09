@@ -175,3 +175,8 @@ html {
     margin: auto;
     display: none;
 }
+.ruokalista{
+    padding: 1rem;
+    max-width: 85%;
+    margin: auto;  
+}

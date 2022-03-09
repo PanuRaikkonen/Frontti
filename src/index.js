@@ -87,7 +87,6 @@ const init = () => {
     if (window.innerWidth >= 1151) {
       avaa.style.display = "none";
       sulje.style.display = "none";
-      console.log("penis");
     }
     else {
       avaa.style.display = "block";
