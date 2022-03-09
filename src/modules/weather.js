@@ -18,5 +18,5 @@ fetch(
     temp.innerHTML = `${roundedTemp}°C`;
     feels.innerHTML = `Tuntuu kuin:<b> ${roundedFeels}°C</b>`;
     desc.innerHTML = `<b> ${descValue}</b>`;
-    ikoni.innerHTML = `<img src="./src/icons/${iconcode}.svg" alt="weather icon" >`;
+    ikoni.innerHTML = `<img src="./src/icons/${iconcode}.svg" alt="weather">`;
   });

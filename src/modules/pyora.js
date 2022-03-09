@@ -34,15 +34,14 @@ async function fetchStations() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            query: `
-    {
-  bikeRentalStations {
-    bikesAvailable
-    lat
-    lon
-  }
-}
-      `,
+            query: `{
+            bikeRentalStations(ids:["140", "139", "138", "292", "141", "204", "144", "137", "235", "148"]) {
+            bikesAvailable
+            lat
+            lon
+          }
+        }
+          `,
         }),
     });
 

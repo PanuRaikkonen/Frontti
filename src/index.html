@@ -22,10 +22,12 @@
     <div class="navbar row">
         <div class="topContainer col">
             <div class="titleContainer row">
-                <img class="metris col" src="./assets/metropolia_s_oranssi_en.png">
-                <h3 class="arabiaTitle col text-center text-wrap"><b>Arabia</b>
-                    <br> Luovien tekijöiden kulttuurikampus
-                </h3>
+                <img class="metris col" alt="logo" src="./assets/metropolia_s_oranssi_en.png">
+                <div class="arabia col">
+                    <h3 id="arab" class="arabiaTitle col text-wrap">Arabia </h3>
+                    <h5 id="arabDesc" class="kampusDesc"> Luovien tekijöiden kulttuurikampus
+                    </h5>
+                </div>
             </div>
         </div>
         <div class="weather col">
@@ -44,22 +46,22 @@
         <div class="leftContainer col-3">
             <h1 class="text-center ">Koronaohjeistus</h1>
             <br>
-            <ul>
+            <ul id="info">
                 <li>
                     Metropolian korona-tilannekuvaryhmä kokoontuu tarvittaessa ja päivittää ohjeistusta korona-tilanteen
                     edellyttämällä tavalla ja huomioiden viranomaisten ohjeet.
                 </li>
-                <br>
+
                 <li>
                     Metropolia palasi kampuspainotteiseen toimintaan 14.2.2022. Metropolia tarjoaa henkilöstölleen
                     mahdollisuuden joustavaan työskentelyyn, jota ohjaavat päivitetyt etätyöohjeet.
                 </li>
-                <br>
+
                 <li>
                     Metropolia tarjoaa mahdollisuuden päätoimisille työntekijöille kolmannen koronarokotuksen ottamiseen
                     työterveyshuollon kautta osana työterveyshuollon kokonaisuutta.
                 </li>
-                <br>
+
                 <li>
                     Metropoliassa palasi 14.2. alkaen opetukseen, jossa toteutustapa määrittyy oppimistavoitteiden
                     pohjalta
@@ -67,7 +69,7 @@
                     kulttuuriministeriön
                     suositus korkeakoulujen etäopetuksesta päättyi 31.1 2022.
                 </li>
-                <br>
+
                 <li>
                     Etelä-Suomen aluehallintovirasto on tehnyt 11.2.2022 päätöksen kokoontumisrajoitusten kumoamisesta
                     Helsingin
@@ -76,7 +78,7 @@
                     alkaen järjestää yleisötilaisuuksia ja tapahtumia ilman rajoituksia. Terveysturvallisuus huomioitava
                     edelleen tilojen käytössä.
                 </li>
-                <br>
+
                 <li>
                     Kampukselle saa tulla vain terveenä. Pienimpienkin koronaan viittaavien oireiden ilmetessä
                     kampuksille
@@ -84,7 +86,7 @@
                     saa tulla. Jos saat koronavilkun kautta ilmoituksen altistumisesta, noudata sen kautta saatuja
                     terveysviranomaisten ohjeita.
                 </li>
-                <br>
+
                 <li>
                     Metropoliassa suositamme vahvasti kaikkia käyttämään kasvomaskeja kampuksillamme ja huolehtimaan
                     terveysturvallisuudesta. Maskeja voi kysyä kampusten aulapalveluista. Mikäli henkilö ei
@@ -102,7 +104,10 @@
         </div>
         <div class="rightContainer col">
             <h1>Päivän ruoka</h1>
-            <ul id="fazerMenu"></ul>
+            <h5>Arabianranta - Hämeentie 135 A</h5>
+            <div class="ruokalista">
+                <ul id="fazerMenu"></ul>
+            </div>
             <div class="diets row">
                 <ul class="col">
                     <li>(G) Gluteeniton</li>

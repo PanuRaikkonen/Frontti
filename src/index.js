@@ -14,7 +14,7 @@ const createMenu = (data, targetId) => {
   ulElement.innerHTML = "";
   for (const item of data) {
     const listElement = document.createElement("li");
-    listElement.textContent = item;
+    listElement.innerHTML = item;
     ulElement.appendChild(listElement);
   }
 };
