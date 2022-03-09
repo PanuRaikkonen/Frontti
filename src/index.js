@@ -14,7 +14,7 @@ const createMenu = (data, targetId) => {
   ulElement.innerHTML = "";
   for (const item of data) {
     const listElement = document.createElement("li");
-    listElement.textContent = item;
+    listElement.innerHTML = item;
     ulElement.appendChild(listElement);
   }
 };
@@ -66,11 +66,31 @@ const init = () => {
   });*/
 
   const list = document.querySelector("#info");
-  document.querySelector("#nappi").addEventListener("click", () => {
-    if (list.style.display == 'none' || list.style.display == '') {
-      list.style.display = 'block';
-    } else {
-      list.style.display = 'none';
+  const nappi = document.querySelector(".leftContainer");
+  const avaa = document.querySelector("#avaa");
+  const sulje = document.querySelector("#sulje");
+  nappi.addEventListener("click", () => {
+    if (window.innerWidth <= 1150) {
+      if (list.style.display == 'none' || list.style.display == '') {
+        list.style.display = 'block';
+        avaa.style.display = 'none';
+        sulje.style.display = 'block';
+      } else {
+        list.style.display = 'none';
+        avaa.style.display = 'block';
+        sulje.style.display = 'none';
+      }
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1151) {
+      avaa.style.display = "none";
+      sulje.style.display = "none";
+      console.log("penis");
+    }
+    else {
+      avaa.style.display = "block";
     }
   });
 
