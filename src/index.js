@@ -87,6 +87,7 @@ const init = () => {
     if (window.innerWidth >= 1151) {
       avaa.style.display = "none";
       sulje.style.display = "none";
+      list.style.display = "block";
     }
     else {
       avaa.style.display = "block";
