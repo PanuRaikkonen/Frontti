@@ -10,6 +10,7 @@ map = new mapboxgl.Map({
     container: 'map',
     style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true',  // Style URL; see our documentation for more options
     center: [24.97647089113386, 60.20995013106471],
+    //center: [24.971589271230357, 60.21055245340651],
     // Initial focus coordinate
     zoom: 14.16
 });
@@ -75,10 +76,12 @@ async function fetchStations() {
 
 }
 
+
 function drawMarkers() {
     //console.log("beginning to draw")
     let z = 0;
     // Next, we can add markers to the map
+
     markerCollection.features.forEach(function (point) {
 
         // Since these are HTML markers, we create a DOM element first, which we will later
