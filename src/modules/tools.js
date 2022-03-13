@@ -4,13 +4,11 @@
 const todayISODate = new Date().toISOString().split("T")[0];
 
 /**
- * TODO: add description
+ * Gets todays date
  *
- * @returns
+ * @returns {number} - number of weekday
  */
 const getTodayIndex = () => {
-  //Note: doesnt work on Sundays
-  //TODO: ^ fix it!
   const weekDayIndex = new Date().getDay() - 1;
   return weekDayIndex;
 };
