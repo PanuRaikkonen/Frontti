@@ -17,14 +17,9 @@ const parseFazerMenuDay = (Menus, dayOfWeek) => {
     const diet = setMenu.Diets;
     let meals = "";
 
-    // console.log(setMenu.Meals);
-
     for (const meal of setMenu.Meals) {
       meals += meal.Name + " (" + meal.Diets + ") <br>";
     }
-    // for (let i = 0; i < Menus[dayOfWeek].SetMenus.length; i++) {
-    //  console.log(Menus[dayOfWeek].SetMenus[i].Meals);
-    // }
     if (price === null) {
       price = "";
     }
