@@ -19,7 +19,7 @@ map.on('load', () => { // lataa staattisen kartan, ja hakee sen j√§lkeen netist√
     mapContainerEl.style.visibility = 'visible';
 });
 
-fetchStations(); // hakee fetchstationin
+fetchStations(); // hakee fetchstation
 
 mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.1/mapbox-gl-rtl-text.js'); // fiksaa mapbox gl js bugin RTL-hallinnan kanssa
 
