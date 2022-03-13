@@ -6,28 +6,26 @@ let markerCollection = {
 
 let map = undefined;
 
-map = new mapboxgl.Map({
+map = new mapboxgl.Map({ // uuden kartan launch
     container: 'map',
-    style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true',  // Style URL; see our documentation for more options
-    center: [24.97647089113386, 60.20995013106471],
-    // Initial focus coordinate
-    zoom: 14.16
+    style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json?optimize=true',  // hakee karttastylen
+    center: [24.97647089113386, 60.20995013106471], // alkupiste kartalle
+    zoom: 14.16 // zoomaus oikeaan paikkaan
 });
 
-map.on('load', () => {
+
+map.on('load', () => { // lataa staattisen kartan, ja hakee sen jälkeen netistä karttastylen
     const mapContainerEl = document.getElementById('map');
     mapContainerEl.style.visibility = 'visible';
 });
 
-fetchStations();
-// Mapbox GL JS has a bug in it's handling of RTL, so we have to grab this dependency as well until they
-// combine it with the main library
-mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.1/mapbox-gl-rtl-text.js');
+fetchStations(); // hakee fetchstationin
 
-// Add zoom and rotation controls to the map.
+mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.1/mapbox-gl-rtl-text.js'); // fiksaa mapbox gl js bugin RTL-hallinnan kanssa
+
 
 async function fetchStations() {
-    //fetch information of bikes from digitransit.fi api
+    // hakee asemat digitransitin apista graphql avulla
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -48,14 +46,10 @@ async function fetchStations() {
 
     const res = await response.json();
 
+    // pitää kertoa mapboxille millainen markercollection kyseessä, ja sen jälkeen collectionin startti oikealla infolla
 
-    //we need to tell mapboxgl what kind of collection of markers is this
-    //so we initialize the collection with the necessary info
-
-    //loop through the info we collected from the api
-    for (let i of res["data"]["bikeRentalStations"]) {
-        //then we parse the info from the api to the correct form for mapboxgl
-        let collection = {
+    for (let i of res["data"]["bikeRentalStations"]) { // tiedon looppaus tiedosta mitä apista tulee
+        let collection = { // parsetaan tiedot apista oikeaan muotoon mapboxia varten
             "type": "Feature",
             "geometry": {
                 "type": "Point",
@@ -66,43 +60,39 @@ async function fetchStations() {
             }
         };
 
-        //then we push collection now in the correct form into markerCollection
+        // pusketaan collection markercollectioniin
         markerCollection.features.push((collection));
 
     }//console.log(markerCollection);
 
     drawMarkers();
-    //event listener checks if the user clicks somewhere on the map
-
 }
 
 function drawMarkers() {
-    //console.log("beginning to draw")
+    // console.log("beginning to draw")
     let z = 0;
-    // Next, we can add markers to the map
+    // lisätään markerit kartalle
     markerCollection.features.forEach(function (point) {
 
-        // Since these are HTML markers, we create a DOM element first, which we will later
-        // pass to the Marker constructor.
+        // koska markerit ovat HTML-muodossa, luodaan ensin DOM-elementti, joka myöhemmin annetaan markerin constructorille
         let elem = document.createElement('div');
         elem.className = 'marker';
-        //we add a data-id attribute with a unique value to the marker so we can later grab info from the right marker
+        // lisätään data-id attribuutti uniikilla arvolla markerille jotta saadaan oikeat tiedot oikeasta markerista
         elem.setAttribute("data-id", z);
 
-        // Now, we construct a marker and set it's coordinates from the GeoJSON. Note the coordinate order.
+        // rakennetaan marker ja asetetaan koordinaatit GeoJSONista
         let marker = new mapboxgl.Marker(elem);
         marker.setLngLat(point.geometry.coordinates);
 
 
-        // You can also create a popup that gets shown when you click on a marker. You can style this using
-        // CSS as well if you so desire. A minimal example is shown. The offset will depend on the height of your image.
+        // popup luodaan ja sitä voi muokata CSS:stä miten haluaa
         let popup = new mapboxgl.Popup({ offset: 24, closeButton: false });
         popup.setHTML('<div>' + point.properties.bikesAvailable + '</div>');
 
-        // Set the marker's popup.
+        // markerin popup
         marker.setPopup(popup);
 
-        // Finally, we add the marker to the map.
+        // lisätään popup kartalle
         marker.addTo(map);
         z++;
     });
